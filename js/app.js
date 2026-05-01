@@ -64,6 +64,15 @@
   try { setupNav(); } catch (e) {}
   document.addEventListener('includes:loaded', setupNav);
 
+  // Also attempt binding on DOMContentLoaded and as a final fallback
+  // try again after a short delay to handle odd race conditions.
+  document.addEventListener('DOMContentLoaded', () => {
+    try { setupNav(); } catch (e) {}
+    setTimeout(() => {
+      try { setupNav(); } catch (e) {}
+    }, 500);
+  });
+
   if (!document.querySelector('[data-site-nav]')) {
     const mo = new MutationObserver((records, observer) => {
       if (document.querySelector('[data-site-nav]')) {
