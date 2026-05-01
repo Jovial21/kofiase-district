@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | SDA Church Kofiase District</title>
+  <meta name="description" content="Contact SDA Church Kofiase District for worship information, prayer requests, and ministry enquiries.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contact">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SDA Church Kofiase District home"><img src="assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
+    <div id="site-nav"></div>
+    <a class="watch-link" href="live.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__copy">
+        <p class="kicker">Contact</p>
+        <h1>Contact Us</h1>
+        <p>Send a message, request prayer, or ask about worship times and ministries.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner contact-layout">
+        <div id="contact-share" class="contact-share" aria-hidden="true" style="display:none; margin-bottom:1rem;"></div>
+        <form class="form-panel" data-feedback-form data-supabase-form="contact">
+          <p class="kicker">Message Us</p>
+          <h2>Send A Message</h2>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" name="name" placeholder="Your name" required>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" name="email" placeholder="you@example.com" required>
+          <label for="contact-phone">Phone (WhatsApp)</label>
+          <input id="contact-phone" type="tel" name="phone" placeholder="233XXXXXXXXX or 0XXXXXXXXX">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="6" placeholder="How can we help?" required></textarea>
+          <button class="btn btn--primary" type="submit">Send Message</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </form>
+
+        <div class="contact-stack">
+          <div class="info-panel">
+            <h2>Church Office</h2>
+            <p><strong>Location</strong><br>Kofiase, Ashanti Mampong<br>Ashanti Region, Ghana</p>
+            <p><strong>Phone</strong><br><a href="tel:+233540460532">+233 54 046 0532</a><br><a href="tel:+233552991226">+233 55 299 1226</a></p>
+            <p><strong>Email</strong><br><a href="mailto:info@kofiaseadventist.org">info@kofiaseadventist.org</a></p>
+          </div>
+          <div class="map-panel" aria-label="Map to SDA Church Kofiase District">
+            <iframe id="contact-map-iframe"
+              title="Map to SDA Church Kofiase District"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Kofiase%2C%20Atwima%20Kwanwoma%2C%20Ashanti%20Region%2C%20Ghana&output=embed">
+            </iframe>
+          </div>
+          <div class="info-panel">
+            <h2>Weekly Gatherings</h2>
+            <p><strong>Sabbath Service</strong><br>Saturday 8:00 AM - 12:00 PM</p>
+            <p><strong>Bible Study</strong><br>Wednesday 6:30 PM - 7:30 PM</p>
+            <p><strong>Prayer Meeting</strong><br>Friday 6:30 PM - 7:30 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script defer src="js/include-fragments.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/supabase-config.js"></script>
+  <script type="module" src="js/supabase-service.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

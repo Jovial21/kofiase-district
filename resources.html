@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | SDA Church Kofiase District</title>
+  <meta name="description" content="Sabbath School lessons, study guides, and helpful resources from SDA Church Kofiase District.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="resources">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SDA Church Kofiase District home">
+      <img src="assets/images/logo-mark.png" alt="" class="brand__mark">
+      <span class="brand__text">SDA Church<br>Kofiase District</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
+    <div id="site-nav"></div>
+    <a class="watch-link" href="live.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__copy">
+        <p class="kicker">Resources</p>
+        <h1>Sabbath School Lessons & Study Materials</h1>
+        <p>Find study guides, lesson PDFs, audio recordings, and links to helpful Christian resources for families and small groups.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <div class="section-title">
+          <p class="kicker">Sabbath School</p>
+          <h2>Quarterly Lessons & Guides</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Current Quarter Lesson</h3>
+            <p>Download the current Sabbath School lesson PDF or view the weekly study questions to prepare for class.</p>
+            <a href="https://ssnet.org" class="btn" target="_blank" rel="noopener">Sabbath School Lessons</a>
+          </article>
+          <article class="feature-card">
+            <h3>Past Lessons Archive</h3>
+            <p>An archive of previous quarterlies and study guides for personal or teacher use.</p>
+            <a href="resources-archive.html" class="btn btn--ghost">Browse Archive</a>
+          </article>
+          <article class="feature-card">
+            <h3>Children & Youth Materials</h3>
+            <p>Activity sheets, memory verses, and lesson helps for children's and youth Sabbath School classes.</p>
+            <a href="children.html">Children's Ministry</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section__inner">
+        <div class="section-title">
+          <p class="kicker">Sermons & Media</p>
+          <h2>Audio & Video Resources</h2>
+        </div>
+        <p>Listen to recent sermons or download audio files for offline listening. Visit the Sermons page for full messages.</p>
+        <div class="media-grid">
+          <article>
+            <h3>Recent Sermons</h3>
+            <p><a href="sermons.html">Browse Sermons</a></p>
+          </article>
+          <article>
+            <h3>Weekly Study Podcasts</h3>
+            <p>Short audio reflections to help you study the lesson during the week.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="helpful-links">
+      <div class="section__inner">
+        <div class="section-title">
+          <p class="kicker">External Links</p>
+          <h2>Recommended Christian Resources</h2>
+        </div>
+        <div class="resources-cta">
+          <h3>Resources</h3>
+          <a class="btn btn--ghost" href="#helpful-links">View All Resources &rarr;</a>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card" id="adventist">
+            <h3>Adventist.org</h3>
+            <p>Official church site — beliefs, global news, and resources.</p>
+            <a href="https://adventist.org/" class="btn" target="_blank" rel="noopener">Visit site</a>
+          </article>
+
+          <article class="feature-card" id="ssnet">
+            <h3>Sabbath School</h3>
+            <p>Weekly lesson downloads and study aids.</p>
+            <a href="https://www.sabbath.school/" class="btn" target="_blank" rel="noopener">Visit site</a>
+          </article>
+
+          <article class="feature-card" id="youversion">
+            <h3>YouVersion</h3>
+            <p>Read the Bible online and join reading plans.</p>
+            <a href="https://www.biblegateway.com/versions/New-King-James-Version-NKJV-Bible/" class="btn btn--ghost" target="_blank" rel="noopener">Visit site</a>
+          </article>
+
+          <article class="feature-card" id="gcyouth">
+            <h3>GC Youth</h3>
+            <p>Youth programs and leadership resources.</p>
+            <a href="https://www.gcyouthministries.org/" class="btn btn--ghost" target="_blank" rel="noopener">Visit site</a>
+          </article>
+
+          <article class="feature-card" id="children">
+            <h3>Children's Ministry</h3>
+            <p>Children's Sabbath School resources and family ministry.</p>
+            <a href="https://children.adventist.org/" class="btn btn--ghost" target="_blank" rel="noopener">Visit site</a>
+          </article>
+
+          <article class="feature-card" id="hope">
+            <h3>Hope Channel</h3>
+            <p>Christian programs and documentaries.</p>
+            <a href="https://hopetv.org/watch/international" class="btn btn--ghost" target="_blank" rel="noopener">Visit site</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script defer src="js/include-fragments.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/supabase-config.js"></script>
+  <script type="module" src="js/supabase-service.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    (function () {
+      function scrollToHash() {
+        var hash = location.hash;
+        if (!hash) return;
+        var el = document.querySelector(hash);
+        if (!el) return;
+        var header = document.querySelector('.site-header');
+        var headerHeight = header ? header.offsetHeight : 80;
+        var top = window.scrollY + el.getBoundingClientRect().top - headerHeight - 12;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        el.setAttribute('tabindex', '-1');
+        el.focus({ preventScroll: true });
+      }
+      window.addEventListener('load', scrollToHash);
+      window.addEventListener('hashchange', scrollToHash);
+    })();
+  </script>
+</body>
+</html>

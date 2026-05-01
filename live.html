@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Live | SDA Church Kofiase District</title>
+  <meta name="description" content="Watch live worship and district programs from SDA Church Kofiase District.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="live">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SDA Church Kofiase District home"><img src="assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
+    <div id="site-nav"></div>
+    <a class="watch-link" href="live.html" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__copy">
+        <p class="kicker">Watch Live</p>
+        <h1>Join Worship From Wherever You Are</h1>
+        <p>Live Sabbath worship, district programs, and special services will appear here.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner live-layout">
+        <div class="video-stage">
+          <img src="assets/images/hero-church.png" alt="SDA Church Kofiase District building">
+          <button class="play-control" type="button" aria-label="Play live stream">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 7 8 5-8 5V7Z"/></svg>
+          </button>
+          <span class="live-badge">Live Soon</span>
+        </div>
+        <aside class="program-panel">
+          <p class="kicker">Next Broadcast</p>
+          <h2>Sabbath Worship Service</h2>
+          <p>Saturday &bull; 8:00 AM - 12:00 PM</p>
+          <div class="program-list">
+            <span>8:00 AM Sabbath School</span>
+            <span>9:30 AM Song Service</span>
+            <span>10:00 AM Divine Service</span>
+            <span>11:15 AM Sermon</span>
+          </div>
+          <a class="btn btn--primary" href="contact.html">Request Prayer</a>
+        </aside>
+        <!-- TikTok Live placeholder: admin can set the full URL in the admin panel by writing it to the data-tiktok-url attribute below -->
+        <div class="tiktok-card" data-tiktok-url="">
+          <h3>TikTok Live</h3>
+          <p>We stream on TikTok — link will appear here when the admin adds the live URL.</p>
+          <a id="tiktok-live" class="btn btn--outline-gold" href="#" data-placeholder="true">Watch on TikTok (placeholder)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section__inner series-strip">
+        <div>
+          <p class="kicker">Stay Connected</p>
+          <h2>Missed the Live Stream?</h2>
+          <p>Catch up on recent messages in the sermon library or contact the media team for program recordings.</p>
+        </div>
+        <a class="btn btn--dark" href="sermons.html">Browse Sermons</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="brand" href="index.html"><img src="assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a><p>To know Christ<br>and to make Him known</p></div>
+      
+      <div><h2>Ministries</h2><a href="youth.html">Youth Ministry</a><a href="women.html">Women's Ministry</a><a href="children.html">Children's Ministry</a><a href="health.html">Health Ministry</a></div>
+      <div><h2>Contact Us</h2><p>Kofiase, Atwima Kwanwoma<br>Ashanti Region, Ghana</p><p><a href="tel:+233241234567">+233 24 123 4567</a></p><p><a href="mailto:info@kofiaseadventist.org">info@kofiaseadventist.org</a></p></div>
+      <div><h2>Service Times</h2><p><strong>Sabbath Service</strong><br>Saturday 8:00 AM - 12:00 PM</p><p><strong>Bible Study</strong><br>Wednesday 6:30 PM - 7:30 PM</p><p><strong>Prayer Meeting</strong><br>Friday 6:30 PM - 7:30 PM</p></div>
+    </div>
+    <p class="copyright">&copy; 2026 SDA Church Kofiase District. All Rights Reserved.</p>
+  </footer>
+  <script defer src="js/include-fragments.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/supabase-config.js"></script>
+  <script type="module" src="js/supabase-service.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    (function(){
+      const card = document.querySelector('.tiktok-card');
+      if(!card) return;
+      const url = card.dataset.tiktokUrl;
+      const link = document.getElementById('tiktok-live');
+      if(url && url.trim().length>0 && link){
+        link.href = url;
+        link.dataset.placeholder = 'false';
+        link.textContent = 'Watch on TikTok Live';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      }
+    })();
+  </script>
+</body>
+</html>

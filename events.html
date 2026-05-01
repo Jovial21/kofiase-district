@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | SDA Church Kofiase District</title>
+  <meta name="description" content="Upcoming worship, Bible study, health, and youth events at SDA Church Kofiase District.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="events">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SDA Church Kofiase District home"><img src="assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
+    <div id="site-nav"></div>
+    <a class="watch-link" href="live.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__copy">
+        <p class="kicker">Events</p>
+        <h1>Upcoming Events</h1>
+        <p>Join district worship experiences, community outreach, prayer gatherings, and ministry events.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner events-layout">
+        <div>
+          <div class="section-title section-title--compact">
+            <p class="kicker">Upcoming</p>
+            <h2>June Events</h2>
+          </div>
+          <div class="large-event-list" data-public-events-list>
+            <article class="large-event large-event--highlight">
+              <img src="assets/images/event-prayer.png" alt="Group meeting together">
+              <div class="date-box"><span>Jun</span><strong>01</strong></div>
+              <div>
+                <span class="event-label">Major Event</span>
+                <h3>Youth Week of Prayer</h3>
+                <p>June 1 - June 7, 2026 &bull; SDA Church Kofiase District</p>
+                <p>A week of prayer, music, Bible study, and mission focus for young people.</p>
+                <a href="contact.html?eventTitle=Youth%20Week%20of%20Prayer&eventDate=June%201%20-%20June%207%2C%202026">Ask about this event</a>
+              </div>
+            </article>
+            <article class="large-event">
+              <img src="assets/images/event-bible.png" alt="Bible study session">
+              <div class="date-box"><span>Jun</span><strong>14</strong></div>
+              <div>
+                <h3>District Sabbath School Program</h3>
+                <p>June 14, 2026 &bull; 9:00 AM</p>
+                <p>District-wide lesson discussion, testimonies, and fellowship.</p>
+                <a href="contact.html?eventTitle=District%20Sabbath%20School%20Program&eventDate=June%2014%2C%202026">Ask about this event</a>
+              </div>
+            </article>
+            <article class="large-event">
+              <img src="assets/images/event-health.png" alt="Health and wellness items">
+              <div class="date-box"><span>Jun</span><strong>28</strong></div>
+              <div>
+                <h3>Health &amp; Wellness Seminar</h3>
+                <p>June 28, 2026 &bull; 2:00 PM</p>
+                <p>Practical teaching on nutrition, lifestyle, and whole-person health.</p>
+                <a href="contact.html?eventTitle=Health%20%26%20Wellness%20Seminar&eventDate=June%2028%2C%202026">Ask about this event</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="calendar-panel" aria-label="June 2026 calendar">
+          <h2>June 2026</h2>
+          <div class="calendar-grid">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            <b class="is-event">1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b>
+            <b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b><b class="is-event">14</b>
+            <b>15</b><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b><b>21</b>
+            <b>22</b><b>23</b><b>24</b><b>25</b><b>26</b><b>27</b><b class="is-event">28</b>
+          </div>
+          <a class="btn btn--dark" href="contact.html">Submit An Event</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--navy">
+      <div class="section__inner series-strip">
+        <div>
+          <p class="kicker">Visit</p>
+          <h2>Need directions or event details?</h2>
+          <p>Contact the church office for location help, transport questions, or ministry-specific event information.</p>
+        </div>
+        <a class="btn btn--primary" href="contact.html">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script defer src="js/include-fragments.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/supabase-config.js"></script>
+  <script type="module" src="js/supabase-service.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

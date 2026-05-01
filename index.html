@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.D.A Church-Kofiase District</title>
+  <meta name="description" content="S.D.A Church Kofiase District - to know Christ and to make Him known.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SDA Church Kofiase District home">
+      <img src="assets/images/logo-mark.png" alt="" class="brand__mark">
+      <span class="brand__text">S.D.A Church<br>Kofiase District</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div id="site-nav"></div>
+
+    <a class="watch-link" href="live.html">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>
+      Watch Live
+    </a>
+  </header>
+
+  <main>
+    <section class="hero hero--home">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Welcome to</p>
+        <h1>S.D.A Church<br>Kofiase District</h1>
+        <p class="hero__lede">To know Christ and to make Him known</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="events.html">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3.5 9.5h17M5 5h14a1.5 1.5 0 0 1 1.5 1.5v12A1.5 1.5 0 0 1 19 20H5a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 5 5Zm4 8h2v2H9v-2Z"/></svg>
+            Join Us This Sabbath
+          </a>
+          <a class="btn btn--ghost" href="sermons.html">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 7 8 5-8 5V7Z"/></svg>
+            Watch Sermons
+          </a>
+        </div>
+      </div>
+
+      <!-- Daily Bread beside the hero content -->
+      <div class="daily-bread-wrapper-hero">
+        <div class="daily-bread__card hero-card">
+          <div class="daily-bread__header">
+            <h2>Daily Bread</h2>
+            <button id="daily-bread-refresh" class="btn btn--ghost" aria-label="Refresh daily verse">Refresh</button>
+          </div>
+          <div id="daily-bread" class="daily-bread__body">
+            <p id="daily-bread-text" class="daily-bread__text">Loading today's verse…</p>
+            <p id="daily-bread-citation" class="daily-bread__citation"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-strip" aria-label="Service details">
+        <article class="service-item">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3.5 9.5h17M5 5h14a1.5 1.5 0 0 1 1.5 1.5v12A1.5 1.5 0 0 1 19 20H5a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 5 5Zm4 9h.01M12 14h.01M15 14h.01"/></svg>
+          <div>
+            <h2>Sabbath Service</h2>
+            <p>Saturday<br>8:00 AM - 12:00 PM</p>
+          </div>
+        </article>
+        <article class="service-item">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-8 0M4.5 20a7.5 7.5 0 0 1 15 0M7 11a3 3 0 1 1-3-3M17 11a3 3 0 1 0 3-3"/></svg>
+          <div>
+            <h2>Bible Study</h2>
+            <p>Wednesday<br>6:30 PM - 7:30 PM</p>
+          </div>
+        </article>
+        <article class="service-item">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v9M8 20l4-4 4 4M7.5 7.5 3 17l5 3M16.5 7.5 21 17l-5 3"/></svg>
+          <div>
+            <h2>Prayer Meeting</h2>
+            <p>Friday<br>6:30 PM - 7:30 PM</p>
+          </div>
+        </article>
+        <article class="service-item">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5.5-8 11-8 11S4 15.5 4 10a8 8 0 1 1 16 0Z"/><path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
+          <div>
+            <h2>Our Location</h2>
+            <p>Kofiase, Ashanti Mampong<br>Ashanti Region, Ghana</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Daily Bread card will be shown on top of the about image (overlay) -->
+
+    <section class="section resources-preview">
+      <div class="section__inner">
+          <div class="section-heading">
+          <div>
+            <h2>Resources</h2>
+            <span></span>
+          </div>
+          <a href="resources.html#helpful-links">View All Resources <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="card-grid">
+          <article class="content-card resource-card"><h3><a id="link-adventist" href="resources.html#adventist">Adventist.org</a></h3><p>Official church site — beliefs, global news, and resources.</p></article>
+          <article class="content-card resource-card"><h3><a id="link-ssnet" href="resources.html#ssnet">Sabbath School</a></h3><p>Weekly lesson downloads and study aids.</p></article>
+          <article class="content-card resource-card"><h3><a id="link-youversion" href="resources.html#youversion">YouVersion</a></h3><p>Read the Bible online and join reading plans.</p></article>
+          <article class="content-card resource-card"><h3><a id="link-youth" href="resources.html#gcyouth">GC Youth</a></h3><p>Youth programs and leadership resources.</p></article>
+          <article class="content-card resource-card"><h3><a id="link-children" href="resources.html#children">Children's Ministry</a></h3><p>Children's Sabbath School resources and family ministry.</p></article>
+          <article class="content-card resource-card"><h3><a id="link-hope" href="resources.html#hope">Hope Channel</a></h3><p>Christian programs and documentaries.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-preview">
+      <div class="section__inner split">
+        <div class="media-frame-wrapper">
+          <img class="media-frame" src="assets/images/about-bible.png" alt="Open Bible illuminated by warm light">
+        </div>
+        <div class="copy-block">
+          <p class="kicker">About</p>
+          <h2>A People United<br>in Christ's Mission</h2>
+          <p>We are a community of believers belonging to the Seventh-day Adventist Church, called to share the everlasting gospel, make disciples, and serve our community as we eagerly await the soon return of our Lord and Saviour, Jesus Christ.</p>
+          <a class="btn btn--dark" href="about.html">Read More <span aria-hidden="true">&rsaquo;</span></a>
+          <img src="assets/images/logo-mark.png" alt="" class="watermark">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="district-churches">
+      <div class="section__inner">
+        <div class="section-heading">
+          <div>
+            <h2>District Churches</h2>
+            <span></span>
+          </div>
+        </div>
+        <p class="kicker">Our seven local churches</p>
+        <ul class="church-list">
+          <li>
+            <a class="church-card" href="contact.html?map=Kofiase%20Central%20SDA%20Church" rel="noopener">
+              <span class="church-badge">1</span>
+              <div class="church-info">
+                <h3 class="church-title">Kofiase Central SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="church-card" href="contact.html?map=Kofiase%20East%20SDA%20Church" rel="noopener">
+              <span class="church-badge">2</span>
+              <div class="church-info">
+                <h3 class="church-title">Kofiase East SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="church-card" href="contact.html?map=Asaam%20SDA%20Church" rel="noopener">
+              <span class="church-badge">3</span>
+              <div class="church-info">
+                <h3 class="church-title">Asaam SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="church-card" href="contact.html?map=Kofiase%20Maranatha%20SDA%20Church" rel="noopener">
+              <span class="church-badge">4</span>
+              <div class="church-info">
+                <h3 class="church-title">Kofiase Maranatha SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="church-card" href="contact.html?map=Naama%20SDA%20Church" rel="noopener">
+              <span class="church-badge">5</span>
+              <div class="church-info">
+                <h3 class="church-title">Naama SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="church-card" href="contact.html?map=Nwaadan%20SDA%20Church" rel="noopener">
+              <span class="church-badge">6</span>
+              <div class="church-info">
+                <h3 class="church-title">Nwaadan SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="church-card" href="contact.html?map=Aframano%20SDA%20Church" rel="noopener">
+              <span class="church-badge">7</span>
+              <div class="church-info">
+                <h3 class="church-title">Aframano SDA Church</h3>
+                <p class="church-sub">Tap to view on map & contact</p>
+              </div>
+              <svg class="church-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script defer src="js/include-fragments.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/supabase-config.js"></script>
+  <script type="module" src="js/supabase-service.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

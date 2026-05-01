@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Announcements | SDA Church Kofiase District</title>
+  <meta name="description" content="Latest announcements, ministry updates, and notices from SDA Church Kofiase District.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="announcements">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SDA Church Kofiase District home"><img src="assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
+    <div id="site-nav"></div>
+    <a class="watch-link" href="live.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__copy">
+        <p class="kicker">Announcements</p>
+        <h1>Church Updates and Ministry Notices</h1>
+        <p>Find current announcements for camps, all-night prayer, ministry programs, registration updates, and district notices.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <div class="section-title">
+          <p class="kicker">Notice Board</p>
+          <h2>Latest Announcements</h2>
+        </div>
+        <div class="card-grid" data-public-announcements-list>
+          <article class="content-card announcement-card" data-priority="featured">
+            <div class="announcement-meta"><span>Featured</span><time>May 5, 2026</time></div>
+            <h3>Youth Camp Registration</h3>
+            <p>Registration details, camp preparation, and payment guidance will be shared by the Youth Ministry team.</p>
+            <small>Youth Ministry</small>
+            <a href="youth.html">Youth Ministry</a>
+          </article>
+          <article class="content-card announcement-card" data-priority="urgent">
+            <div class="announcement-meta"><span>Urgent</span><time>May 10, 2026</time></div>
+            <h3>All-night Prayer</h3>
+            <p>Join the district family for prayer, praise, testimonies, and Bible reflection.</p>
+            <small>District</small>
+            <a href="events.html">View Events</a>
+          </article>
+          <article class="content-card announcement-card">
+            <div class="announcement-meta"><span>Notice</span><time>May 15, 2026</time></div>
+            <h3>Health Outreach Volunteers</h3>
+            <p>Health Ministry is receiving names of members available to support upcoming community outreach.</p>
+            <small>Health Ministry</small>
+            <a href="health.html">Health Ministry</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="brand" href="index.html"><img src="assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a><p>To know Christ<br>and to make Him known</p></div>
+      
+      <div><h2>Ministries</h2><a href="youth.html">Youth Ministry</a><a href="women.html">Women's Ministry</a><a href="children.html">Children's Ministry</a><a href="health.html">Health Ministry</a></div>
+      <div><h2>Contact Us</h2><p>Kofiase, Atwima Kwanwoma<br>Ashanti Region, Ghana</p><p><a href="tel:+233241234567">+233 24 123 4567</a></p><p><a href="mailto:info@kofiaseadventist.org">info@kofiaseadventist.org</a></p></div>
+      <div><h2>Service Times</h2><p><strong>Sabbath Service</strong><br>Saturday 8:00 AM - 12:00 PM</p><p><strong>Bible Study</strong><br>Wednesday 6:30 PM - 7:30 PM</p><p><strong>Prayer Meeting</strong><br>Friday 6:30 PM - 7:30 PM</p></div>
+    </div>
+    <p class="copyright">&copy; 2026 SDA Church Kofiase District. All Rights Reserved.</p>
+  </footer>
+  <script defer src="js/include-fragments.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="js/supabase-config.js"></script>
+  <script type="module" src="js/supabase-service.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

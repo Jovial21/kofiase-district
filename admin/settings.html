@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | SDA Church Kofiase District</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="admin-body" data-admin-page="settings">
+  <div class="admin-shell" data-admin-shell>
+    <aside class="admin-sidebar">
+      <a class="brand admin-sidebar__brand" href="dashboard.html"><img src="../assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"><a href="dashboard.html" data-admin-nav="dashboard">Overview</a><a href="sermons.html" data-admin-nav="sermons">Sermons</a><a href="events.html" data-admin-nav="events">Events</a><a href="announcements.html" data-admin-nav="announcements">Announcements</a><a href="ministries.html" data-admin-nav="ministries">Ministries</a><a href="gallery.html" data-admin-nav="gallery">Gallery</a><a href="messages.html" data-admin-nav="messages">Messages</a><a href="settings.html" data-admin-nav="settings">Settings</a></nav>
+      <a class="admin-sidebar__site" href="../index.html">View Public Site</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" aria-label="Open admin menu" aria-expanded="false" data-admin-toggle><span></span><span></span><span></span></button>
+        <div><p class="admin-topbar__eyebrow">System</p><h1>Settings</h1></div>
+        <label class="admin-search"><span>Search</span><input type="search" placeholder="Search settings"></label>
+        <a class="btn btn--primary" href="../index.html">Preview Site</a>
+      </header>
+
+      <main class="admin-content">
+        <section class="admin-grid admin-grid--settings">
+          <form class="admin-panel admin-form" data-feedback-form data-supabase-form="settings-profile">
+            <p class="kicker">Church Profile</p>
+            <h2>Public Information</h2>
+            <label for="site-name">Church Name</label>
+            <input id="site-name" type="text" value="SDA Church Kofiase District">
+            <label for="site-tagline">Tagline</label>
+            <input id="site-tagline" type="text" value="To know Christ and to make Him known">
+            <label for="site-location">Location</label>
+            <textarea id="site-location" rows="3">Kofiase, Atwima Kwanwoma&#10;Ashanti Region, Ghana</textarea>
+            <label for="site-phone">Phone</label>
+            <input id="site-phone" type="tel" value="+233 24 123 4567">
+            <label for="site-email">Email</label>
+            <input id="site-email" type="email" value="info@kofiaseadventist.org">
+            <label for="site-tiktok">TikTok Live URL</label>
+            <input id="site-tiktok" type="url" placeholder="https://www.tiktok.com/@YourUsername/live">
+            <h3>External Links</h3>
+            <p class="muted">Add or update common external resource links used across the site.</p>
+            <label for="site-link-adventist">Adventist.org</label>
+            <input id="site-link-adventist" type="url" placeholder="https://www.adventist.org/">
+            <label for="site-link-ssnet">Sabbath School (SSNet)</label>
+            <input id="site-link-ssnet" type="url" placeholder="https://ssnet.org/">
+            <label for="site-link-youversion">YouVersion</label>
+            <input id="site-link-youversion" type="url" placeholder="https://www.kingjamesbibleonline.org/">
+            <label for="site-link-youth">GC Youth</label>
+            <input id="site-link-youth" type="url" placeholder="https://youth.adventist.org/">
+            <label for="site-link-hope">Hope Channel</label>
+            <input id="site-link-hope" type="url" placeholder="https://hopechannel.org/">
+            <label for="site-link-children">Children's Ministry</label>
+            <input id="site-link-children" type="url" placeholder="https://children.adventist.org/">
+            <button class="btn btn--primary" type="submit">Save Profile</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+
+          <form class="admin-panel admin-form" data-feedback-form data-supabase-form="settings-schedule">
+            <p class="kicker">Service Times</p>
+            <h2>Weekly Schedule</h2>
+            <label for="youth-meetings-mon">Youth meetings (Mon)</label>
+            <input id="youth-meetings-mon" type="text" value="Mondays 7:00 PM - 8:00 PM">
+
+            <label for="study-time">Bible Study</label>
+            <input id="study-time" type="text" value="Sunday 7:30 PM - 8:00 PM">
+
+            <label for="youth-meetings-fri">Youth meetings (Fri)</label>
+            <input id="youth-meetings-fri" type="text" value="Friday 7:00 PM - 8:00 PM">
+
+            <label for="sabbath-time">Sabbath Service</label>
+            <input id="sabbath-time" type="text" value="Saturday 8:00 AM - 12:00 PM">
+
+            <label for="live-status">Live Stream Status</label>
+            <select id="live-status"><option>Live Soon</option><option>Live Now</option><option>Offline</option></select>
+            <button class="btn btn--primary" type="submit">Save Schedule</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </section>
+
+        <section class="admin-panel">
+          <div class="admin-panel__header"><div><p class="kicker">Access</p><h2>Admin Roles</h2></div><button class="btn btn--dark" type="button">Invite Admin</button></div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Name</th><th>Role</th><th>Email</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Office Admin</td><td>Administrator</td><td>admin@kofiaseadventist.org</td><td><span class="status-pill status-pill--live">Active</span></td></tr>
+                <tr><td>Media Team</td><td>Content Editor</td><td>media@kofiaseadventist.org</td><td><span class="status-pill status-pill--live">Active</span></td></tr>
+                <tr><td>Treasury</td><td>Giving Manager</td><td>treasury@kofiaseadventist.org</td><td><span class="status-pill status-pill--draft">Invited</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/supabase-config.js"></script>
+  <script type="module" src="../js/supabase-service.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>
