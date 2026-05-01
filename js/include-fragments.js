@@ -12,11 +12,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
 
-  // support pages served from /public/ which need a ".." base
-  const base = window.location.pathname.includes('/public/') ? '..' : '.';
+  // load nav/footer from project root (supports sites where includes/ was removed)
   await Promise.all([
-    loadFragment('#site-nav', `${base}/includes/nav.html`),
-    loadFragment('#site-footer', `${base}/includes/footer.html`)
+    loadFragment('#site-nav', '/nav.html'),
+    loadFragment('#site-footer', '/footer.html')
   ]);
 
   // mark active nav link based on body data-page
