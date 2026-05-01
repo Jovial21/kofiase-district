@@ -6,26 +6,32 @@
   // Initialize navigation after includes are loaded (handles timing when nav is injected)
   function setupNav() {
     const header = document.querySelector(".site-header");
-    const navToggle = document.querySelector("[data-nav-toggle]");
-    const siteNav = document.querySelector("[data-site-nav]");
-    if (!header || !navToggle || !siteNav) return;
+    const navToggles = document.querySelectorAll("[data-nav-toggle]");
+    const siteNavs = document.querySelectorAll("[data-site-nav], .site-nav");
+    if (!header || navToggles.length === 0 || siteNavs.length === 0) return;
     if (header.dataset.navInitialized === "true") return;
     header.dataset.navInitialized = "true";
 
-    navToggle.addEventListener("click", () => {
-      const isOpen = header.classList.toggle("is-open");
-      body.classList.toggle("nav-open", isOpen);
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    // Toggle open/close for every nav toggle on the page
+    navToggles.forEach((navToggle) => {
+      navToggle.addEventListener("click", () => {
+        const isOpen = header.classList.toggle("is-open");
+        body.classList.toggle("nav-open", isOpen);
+        navToggles.forEach((t) => t.setAttribute("aria-expanded", String(isOpen)));
+        navToggles.forEach((t) => t.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation"));
+      });
     });
 
-    siteNav.addEventListener("click", (event) => {
-      if (event.target.closest("a")) {
-        header.classList.remove("is-open");
-        body.classList.remove("nav-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open navigation");
-      }
+    // Close nav when any nav link is clicked (handle multiple nav containers if present)
+    siteNavs.forEach((siteNav) => {
+      siteNav.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          header.classList.remove("is-open");
+          body.classList.remove("nav-open");
+          navToggles.forEach((t) => t.setAttribute("aria-expanded", "false"));
+          navToggles.forEach((t) => t.setAttribute("aria-label", "Open navigation"));
+        }
+      });
     });
   }
 
