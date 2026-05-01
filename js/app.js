@@ -46,8 +46,22 @@
   }
 
   // attempt to initialize now and also after includes are loaded
+  // If the nav fragment hasn't been injected yet, watch the DOM and
+  // initialize when a `[data-site-nav]` element appears. This avoids
+  // a race where the includes load event fires before this script
+  // attaches its listener in some environments.
   try { setupNav(); } catch (e) {}
   document.addEventListener('includes:loaded', setupNav);
+
+  if (!document.querySelector('[data-site-nav]')) {
+    const mo = new MutationObserver((records, observer) => {
+      if (document.querySelector('[data-site-nav]')) {
+        try { setupNav(); } catch (e) { /* ignore */ }
+        observer.disconnect();
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+  }
 
   const adminShell = document.querySelector("[data-admin-shell]");
   const adminToggle = document.querySelector("[data-admin-toggle]");
