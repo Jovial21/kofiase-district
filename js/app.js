@@ -40,6 +40,21 @@
     });
   }
 
+  // Delegated click handler as a safety net: toggle nav when any [data-nav-toggle] is clicked.
+  document.addEventListener('click', (e) => {
+    const navToggle = e.target.closest && e.target.closest('[data-nav-toggle]');
+    if (!navToggle) return;
+    try {
+      const header = document.querySelector('.site-header');
+      const navToggles = document.querySelectorAll('[data-nav-toggle]');
+      if (!header) return;
+      const isOpen = header.classList.toggle('is-open');
+      document.body.classList.toggle('nav-open', isOpen);
+      navToggles.forEach((t) => t.setAttribute('aria-expanded', String(isOpen)));
+      navToggles.forEach((t) => t.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation'));
+    } catch (err) { /* ignore */ }
+  });
+
   if (currentPage) {
     document.querySelectorAll("[data-nav]").forEach((link) => {
       if (link.dataset.nav === currentPage) {
