@@ -14,7 +14,18 @@
       <span class="brand__text">SDA Church<br>Kofiase District</span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
-    <div id="site-nav"></div>
+    <nav class="site-nav" aria-label="Primary navigation" data-site-nav>
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="ministries.html" data-nav="ministries">Ministries</a>
+      <a href="resources.html" data-nav="resources">Resources</a>
+      <a href="sermons.html" data-nav="sermons">Sermons</a>
+      <a href="sabbath-school.html" data-nav="sabbath-school">Sabbath School</a>
+      <a href="events.html" data-nav="events">Events</a>
+      <a href="gallery.html" data-nav="gallery">Gallery</a>
+      <a href="give.html" data-nav="give">Give</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
     <a class="watch-link" href="live.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
   </header>
 
@@ -83,8 +94,58 @@
     </section>
   </main>
 
-  <div id="site-footer"></div>
-  <script type="module" src="/js/include-fragments.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/images/logo-mark.png" alt="SDA Church Kofiase District" class="brand__mark">
+            <span class="brand__text">SDA Church<br>Kofiase District</span>
+          </a>
+          <p class="footer-tag">To know Christ and to make Him known</p>
+          <div class="social-links" aria-label="Social links">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a4 4 0 0 0-4 4v3H8v3h3v7h3v-7h2.5l.5-3H14V6a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8s-1-3-5-3H7C3 5 2 8 2 8s-1 3-1 6 1 6 1 6 1 3 5 3h10c4 0 5-3 5-3s1-3 1-6-1-6-1-6zM10 15V9l6 3-6 3z"/></svg></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3.5c-.1 1.8.6 3.1 2.1 3.9v2.1c-1.4-.6-2.6-.9-3.8-.8v6.8c-1.4-.1-2.8-.6-3.9-1.4 0 0 0-6.9 0-7.1 1.2.8 2.7 1.3 4.1 1.3V3.5h1.5zM9 8.5v7.9c-.9-.6-1.9-1.1-3-1.3v-2.1c.9.2 1.7.5 3 .5V8.5h0z"/></svg></a>
+            <a href="https://wa.me/233540460532" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.1A9 9 0 1 1 11.9 3 9 9 0 0 1 21 12.1z"/><path d="M17 14.2c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.2-.8.9-1 1.1-.2.2-.3.3-.6.1-.3-.2-1.1-.4-2.1-1.3-.8-.8-1.3-1.7-1.5-2-.2-.4 0-.6.1-.7.1-.1.3-.3.5-.5.2-.2.3-.3.4-.5.1-.1.1-.3 0-.5-.1-.2-.7-1.6-.9-2.2-.2-.6-.4-.5-.7-.5-.2 0-.5 0-.8 0-.2 0-.5.1-.7.1;-3 0-.7.2-1 0s-1.7-1-2.3-1.5C6 7.3 6 9 6 11.1c0 2.1 1.5 4.6 4.4 7.3 2.9 2.7 5.2 3.2 7 3.6 1.8.4 3.4.1 3.7 0 .3-.1 1.9-1.1 2.2-2.2.3-1 .3-2 .2-2.2s-.6-.3-.9-.4z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Ministries</h3>
+          <ul class="footer-links">
+            <li><a href="youth.html">Youth Ministry</a></li>
+            <li><a href="women.html">Women's Ministry</a></li>
+            <li><a href="children.html">Children's Ministry</a></li>
+            <li><a href="about.html#ministries">Personal Ministries</a></li>
+            <li><a href="music.html">Music Ministry</a></li>
+            <li><a href="health.html">Health Ministry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <address class="footer-contact">
+            <div>Kofiase, Ashanti Mampong <br>Ashanti Region, Ghana</div>
+            <div><a href="tel:+233540460532">+233 54 046 0532</a></div>
+            <div><a href="mailto:info@kofiaseadventist.org">info@kofiaseadventist.org</a></div>
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h3>Service Times</h3>
+          <ul class="footer-times">
+            <li><strong>Sabbath Service</strong><span>Saturday 8:00 AM - 12:00 PM</span></li>
+            <li><strong>Bible Study</strong><span>Wednesday 6:30 PM - 7:30 PM</span></li>
+            <li><strong>Prayer Meeting</strong><span>Friday 6:30 PM - 7:30 PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 SDA Church Kofiase District. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="module" src="js/supabase-config.js"></script>
   <script type="module" src="js/supabase-service.js"></script>
