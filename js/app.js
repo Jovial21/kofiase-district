@@ -12,18 +12,22 @@
     if (header.dataset.navInitialized === "true") return;
     header.dataset.navInitialized = "true";
 
-    // Toggle open/close for every nav toggle on the page
+    // Toggle open/close for every nav toggle on the page (idempotent)
+    console.debug('setupNav: found', navToggles.length, 'toggles and', siteNavs.length, 'nav containers on page', currentPage);
     navToggles.forEach((navToggle) => {
+      if (navToggle.dataset.navBound === 'true') return;
       navToggle.addEventListener("click", () => {
         const isOpen = header.classList.toggle("is-open");
         body.classList.toggle("nav-open", isOpen);
         navToggles.forEach((t) => t.setAttribute("aria-expanded", String(isOpen)));
         navToggles.forEach((t) => t.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation"));
       });
+      navToggle.dataset.navBound = 'true';
     });
 
     // Close nav when any nav link is clicked (handle multiple nav containers if present)
     siteNavs.forEach((siteNav) => {
+      if (siteNav.dataset.navBound === 'true') return;
       siteNav.addEventListener("click", (event) => {
         if (event.target.closest("a")) {
           header.classList.remove("is-open");
@@ -32,6 +36,7 @@
           navToggles.forEach((t) => t.setAttribute("aria-label", "Open navigation"));
         }
       });
+      siteNav.dataset.navBound = 'true';
     });
   }
 
