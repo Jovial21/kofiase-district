@@ -31,10 +31,12 @@ if (location.protocol === 'file:') {
       if (!header || !navToggle || !siteNav) return;
 
       navToggle.addEventListener('click', () => {
+        console.debug('navToggle (inline) clicked');
         const isOpen = header.classList.toggle('is-open');
         document.body.classList.toggle('nav-open', isOpen);
         navToggle.setAttribute('aria-expanded', String(isOpen));
         navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        console.debug('site-header state (inline):', isOpen);
       });
 
       siteNav.addEventListener('click', (event) => {

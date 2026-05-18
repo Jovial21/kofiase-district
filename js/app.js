@@ -16,12 +16,14 @@
     console.debug('setupNav: found', navToggles.length, 'toggles and', siteNavs.length, 'nav containers on page', currentPage);
     navToggles.forEach((navToggle) => {
       if (navToggle.dataset.navBound === 'true') return;
-      navToggle.addEventListener("click", () => {
-        const isOpen = header.classList.toggle("is-open");
-        body.classList.toggle("nav-open", isOpen);
-        navToggles.forEach((t) => t.setAttribute("aria-expanded", String(isOpen)));
-        navToggles.forEach((t) => t.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation"));
-      });
+        navToggle.addEventListener("click", () => {
+          console.debug('navToggle (bound) clicked');
+          const isOpen = header.classList.toggle("is-open");
+          body.classList.toggle("nav-open", isOpen);
+          navToggles.forEach((t) => t.setAttribute("aria-expanded", String(isOpen)));
+          navToggles.forEach((t) => t.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation"));
+          console.debug('site-header state (bound):', isOpen);
+        });
       navToggle.dataset.navBound = 'true';
     });
 
@@ -42,9 +44,60 @@
 
   // Delegated click handler as a safety net: toggle nav when any [data-nav-toggle] is clicked.
   document.addEventListener('click', (e) => {
+    // site nav toggle
+    const navToggle = e.target.closest && e.target.closest('[data-nav-toggle]');
+    if (navToggle) {
+      try {
+        const header = document.querySelector('.site-header');
+        const navToggles = document.querySelectorAll('[data-nav-toggle]');
+        if (header) {
+          const isOpen = header.classList.toggle('is-open');
+          document.body.classList.toggle('nav-open', isOpen);
+          navToggles.forEach((t) => t.setAttribute('aria-expanded', String(isOpen)));
+          navToggles.forEach((t) => t.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation'));
+        }
+      } catch (err) { /* ignore */ }
+      return;
+    }
+
+    // admin menu toggle (delegated as a safety net if initial binding missed)
+    const adminToggle = e.target.closest && e.target.closest('[data-admin-toggle]');
+    if (adminToggle) {
+      try {
+        const adminShell = document.querySelector('[data-admin-shell]');
+        const adminToggles = document.querySelectorAll('[data-admin-toggle]');
+        if (!adminShell) return;
+        const isOpen = adminShell.classList.toggle('is-open');
+        document.body.classList.toggle('nav-open', isOpen);
+        adminToggles.forEach((t) => t.setAttribute('aria-expanded', String(isOpen)));
+        adminToggles.forEach((t) => t.setAttribute('aria-label', isOpen ? 'Close admin menu' : 'Open admin menu'));
+      } catch (err) { /* ignore */ }
+    }
+  });
+
+  // Also handle pointerdown (touch) as an extra safety for some mobile browsers
+  document.addEventListener('pointerdown', (e) => {
+    const navToggle = e.target.closest && e.target.closest('[data-nav-toggle]');
+    if (navToggle) {
+      try {
+        console.debug('navToggle (pointerdown delegated)');
+        const header = document.querySelector('.site-header');
+        const navToggles = document.querySelectorAll('[data-nav-toggle]');
+        if (!header) return;
+        const isOpen = header.classList.toggle('is-open');
+        document.body.classList.toggle('nav-open', isOpen);
+        navToggles.forEach((t) => t.setAttribute('aria-expanded', String(isOpen)));
+        navToggles.forEach((t) => t.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation'));
+      } catch (err) { /* ignore */ }
+    }
+  });
+
+  // Capturing click handler to ensure we catch the toggle before other handlers
+  document.addEventListener('click', (e) => {
     const navToggle = e.target.closest && e.target.closest('[data-nav-toggle]');
     if (!navToggle) return;
     try {
+      console.debug('navToggle (capturing) clicked');
       const header = document.querySelector('.site-header');
       const navToggles = document.querySelectorAll('[data-nav-toggle]');
       if (!header) return;
@@ -53,7 +106,7 @@
       navToggles.forEach((t) => t.setAttribute('aria-expanded', String(isOpen)));
       navToggles.forEach((t) => t.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation'));
     } catch (err) { /* ignore */ }
-  });
+  }, true);
 
   if (currentPage) {
     document.querySelectorAll("[data-nav]").forEach((link) => {
