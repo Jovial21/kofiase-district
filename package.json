@@ -1,0 +1,16 @@
+{
+  "name": "kofise-district",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "check": "node --check js/supabase-service.js && node --check js/app.js && node --check js/include-fragments.js",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.10"
+  }
+}

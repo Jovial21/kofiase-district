@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Gallery | SDA Church Kofiase District</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="admin-body" data-admin-page="gallery">
+  <div class="admin-shell" data-admin-shell>
+    <aside class="admin-sidebar">
+      <a class="brand admin-sidebar__brand" href="dashboard.html"><img src="../assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"><a href="dashboard.html" data-admin-nav="dashboard">Overview</a><a href="sermons.html" data-admin-nav="sermons">Sermons</a><a href="events.html" data-admin-nav="events">Events</a><a href="announcements.html" data-admin-nav="announcements">Announcements</a><a href="ministries.html" data-admin-nav="ministries">Ministries</a><a href="gallery.html" data-admin-nav="gallery">Gallery</a><a href="messages.html" data-admin-nav="messages">Messages</a><a href="settings.html" data-admin-nav="settings">Settings</a></nav>
+      <a class="admin-sidebar__site" href="../index.html">View Public Site</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" aria-label="Open admin menu" aria-expanded="false" data-admin-toggle><span></span><span></span><span></span></button>
+        <div><p class="admin-topbar__eyebrow">Media</p><h1>Gallery</h1></div>
+        <label class="admin-search"><span>Search</span><input type="search" placeholder="Search gallery"></label>
+        <a class="btn btn--primary" href="#gallery-form">Add Photo</a>
+      </header>
+
+      <main class="admin-content">
+        <section class="admin-grid admin-grid--forms">
+          <article class="admin-panel">
+            <div class="admin-panel__header"><div><p class="kicker">Photos</p><h2>Gallery Items</h2></div><a href="../gallery.html">Preview page</a></div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>Photo</th><th>Title</th><th>Category</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody data-admin-gallery>
+                  <tr><td><img class="admin-thumb" src="../assets/images/hero-church.png" alt=""></td><td>Sabbath at Kofiase</td><td>Worship</td><td><span class="status-pill status-pill--live">Published</span></td><td><button type="button">Edit</button></td></tr>
+                  <tr><td><img class="admin-thumb" src="../assets/images/event-prayer.png" alt=""></td><td>Youth Week of Prayer</td><td>Youth</td><td><span class="status-pill status-pill--draft">Draft</span></td><td><button type="button">Edit</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <form class="admin-panel admin-form" id="gallery-form" data-feedback-form data-supabase-form="gallery">
+            <p class="kicker">Editor</p>
+            <h2>Add Gallery Photo</h2>
+            <p class="muted">Only category and image upload are required. You can optionally add a short description; title will be generated from the filename.</p>
+            <label for="gallery-category">Category</label>
+            <select id="gallery-category"><option value="worship">Worship</option><option value="youth">Youth</option><option value="outreach">Outreach</option><option value="study">Bible Study</option><option value="health">Health</option></select>
+            <label for="gallery-file">Upload Image</label>
+            <input id="gallery-file" type="file" accept="image/png,image/jpeg,image/webp" required>
+            <label for="gallery-caption">Description</label>
+            <textarea id="gallery-caption" rows="3" placeholder="Short description or caption (optional)"></textarea>
+            <button class="btn btn--primary" type="submit">Save Photo</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/supabase-config.js"></script>
+  <script type="module" src="../js/supabase-service.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

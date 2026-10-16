@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Sermons | SDA Church Kofiase District</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="admin-body" data-admin-page="sermons">
+  <div class="admin-shell" data-admin-shell>
+    <aside class="admin-sidebar">
+      <a class="brand admin-sidebar__brand" href="dashboard.html"><img src="../assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"><a href="dashboard.html" data-admin-nav="dashboard">Overview</a><a href="sermons.html" data-admin-nav="sermons">Sermons</a><a href="events.html" data-admin-nav="events">Events</a><a href="announcements.html" data-admin-nav="announcements">Announcements</a><a href="ministries.html" data-admin-nav="ministries">Ministries</a><a href="gallery.html" data-admin-nav="gallery">Gallery</a><a href="messages.html" data-admin-nav="messages">Messages</a><a href="settings.html" data-admin-nav="settings">Settings</a></nav>
+      <a class="admin-sidebar__site" href="../index.html">View Public Site</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" aria-label="Open admin menu" aria-expanded="false" data-admin-toggle><span></span><span></span><span></span></button>
+        <div><p class="admin-topbar__eyebrow">Content</p><h1>Sermons</h1></div>
+        <label class="admin-search"><span>Search</span><input type="search" placeholder="Search sermons"></label>
+        <a class="btn btn--primary" href="#sermon-form">New Sermon</a>
+      </header>
+
+      <main class="admin-content">
+        <section class="admin-grid admin-grid--forms">
+          <article class="admin-panel">
+            <div class="admin-panel__header">
+              <div><p class="kicker">Library</p><h2>Sermon Queue</h2></div>
+              <div class="admin-tabs" role="group" aria-label="Sermon status">
+                <button class="is-active" type="button">All</button>
+                <button type="button">Published</button>
+                <button type="button">Drafts</button>
+              </div>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>Title</th><th>Speaker</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody data-admin-sermons>
+                  <!-- Sermon rows will be populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <form class="admin-panel admin-form" id="sermon-form" data-feedback-form data-supabase-form="sermon">
+            <p class="kicker">Editor</p>
+            <h2>Add Sermon</h2>
+            <label for="sermon-title">Title</label>
+            <input id="sermon-title" type="text" placeholder="Sermon title" required>
+            <label for="sermon-speaker">Speaker</label>
+            <input id="sermon-speaker" type="text" placeholder="Speaker name" required>
+            <label for="sermon-date">Service Date</label>
+            <input id="sermon-date" type="date" required>
+            <label for="sermon-series">Series</label>
+            <select id="sermon-series"><option>Worship Service</option><option>Bible Study</option><option>Youth Service</option><option>Special Program</option></select>
+            <label for="sermon-link">Video Link</label>
+            <input id="sermon-link" type="url" placeholder="https://">
+            <label for="sermon-thumbnail">Thumbnail URL</label>
+            <input id="sermon-thumbnail" type="text" placeholder="assets/images/sermon-main.png">
+            <label for="sermon-summary">Summary</label>
+            <textarea id="sermon-summary" rows="5" placeholder="Short sermon description"></textarea>
+            <label for="sermon-status">Status</label>
+            <select id="sermon-status"><option value="published">Published</option><option value="scheduled">Scheduled</option><option value="draft">Draft</option></select>
+            <button class="btn btn--primary" type="submit">Save Sermon</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/supabase-config.js"></script>
+  <script type="module" src="../js/supabase-service.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

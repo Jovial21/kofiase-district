@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events | SDA Church Kofiase District</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="admin-body" data-admin-page="events">
+  <div class="admin-shell" data-admin-shell>
+    <aside class="admin-sidebar">
+      <a class="brand admin-sidebar__brand" href="dashboard.html"><img src="../assets/images/logo-mark.png" alt="" class="brand__mark"><span class="brand__text">SDA Church<br>Kofiase District</span></a>
+      <nav class="admin-nav" aria-label="Admin navigation"><a href="dashboard.html" data-admin-nav="dashboard">Overview</a><a href="sermons.html" data-admin-nav="sermons">Sermons</a><a href="events.html" data-admin-nav="events">Events</a><a href="announcements.html" data-admin-nav="announcements">Announcements</a><a href="ministries.html" data-admin-nav="ministries">Ministries</a><a href="gallery.html" data-admin-nav="gallery">Gallery</a><a href="messages.html" data-admin-nav="messages">Messages</a><a href="settings.html" data-admin-nav="settings">Settings</a></nav>
+      <a class="admin-sidebar__site" href="../index.html">View Public Site</a>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" aria-label="Open admin menu" aria-expanded="false" data-admin-toggle><span></span><span></span><span></span></button>
+        <div><p class="admin-topbar__eyebrow">Planning</p><h1>Events</h1></div>
+        <label class="admin-search"><span>Search</span><input type="search" placeholder="Search events"></label>
+        <a class="btn btn--primary" href="#event-form">New Event</a>
+      </header>
+
+      <main class="admin-content">
+        <section class="admin-grid admin-grid--forms">
+          <article class="admin-panel">
+            <div class="admin-panel__header"><div><p class="kicker">Calendar</p><h2>Upcoming Events</h2></div><a href="../events.html">Preview page</a></div>
+            <div class="admin-event-list" data-admin-events>
+              <!-- Events will be populated dynamically -->
+            </div>
+          </article>
+
+          <form class="admin-panel admin-form" id="event-form" data-feedback-form data-supabase-form="event">
+            <p class="kicker">Editor</p>
+            <h2>Add Event</h2>
+            <label for="event-title">Event Title</label>
+            <input id="event-title" type="text" placeholder="Event title" required>
+            <label for="event-date">Date</label>
+            <input id="event-date" type="date" required>
+            <label for="event-time">Time</label>
+            <input id="event-time" type="time">
+            <label for="event-ministry">Ministry</label>
+            <select id="event-ministry"><option>District</option><option>Youth Ministry</option><option>Health Ministry</option><option>Women's Ministry</option><option>Children's Ministry</option></select>
+            <label for="event-location">Location</label>
+            <input id="event-location" type="text" placeholder="Venue">
+            <label for="event-image-url">Image URL</label>
+            <input id="event-image-url" type="text" placeholder="assets/images/event-prayer.png">
+            <label for="event-description">Description</label>
+            <textarea id="event-description" rows="5" placeholder="What should members know?"></textarea>
+            <label for="event-status">Status</label>
+            <select id="event-status"><option value="published">Published</option><option value="featured">Featured</option><option value="draft">Draft</option></select>
+            <button class="btn btn--primary" type="submit">Save Event</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/supabase-config.js"></script>
+  <script type="module" src="../js/supabase-service.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

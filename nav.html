@@ -1,0 +1,52 @@
+<nav class="site-nav" aria-label="Primary navigation" data-site-nav>
+  <a href="index.html" data-nav="home">Home</a>
+  <a href="about.html" data-nav="about">About</a>
+  <a href="ministries.html" data-nav="ministries">Ministries</a>
+  <a href="resources.html" data-nav="resources">Resources</a>
+  <a href="sermons.html" data-nav="sermons">Sermons</a>
+  <a href="sabbath-school.html" data-nav="sabbath-school">Sabbath School</a>
+  <a href="events.html" data-nav="events">Events</a>
+  <a href="gallery.html" data-nav="gallery">Gallery</a>
+  <a href="give.html" data-nav="give">Give</a>
+  <a href="contact.html" data-nav="contact">Contact</a>
+</nav>
+
+<script>
+if (location.protocol === 'file:') {
+  const banner = document.createElement('div');
+  banner.style = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#fff3cd;color:#0f172a;padding:.6rem;text-align:center;font-weight:700;border-bottom:1px solid #fde68a';
+  banner.innerHTML = 'You opened this page as a local file. Open the dev server instead: <a href="http://localhost:5173/">http://localhost:5173/</a> or <a href="http://192.168.249.140:5173/">network</a>';
+  document.body.prepend(banner);
+  document.documentElement.style.paddingTop = '3rem';
+}
+</script>
+
+<!-- Inline nav initializer: ensures mobile toggle works even if site JS isn't loaded -->
+<script>
+  (function(){
+    try {
+      const header = document.querySelector('.site-header');
+      const navToggle = header && header.querySelector('[data-nav-toggle]');
+      const siteNav = document.querySelector('[data-site-nav]') || document.querySelector('.site-nav');
+      if (!header || !navToggle || !siteNav) return;
+
+      navToggle.addEventListener('click', () => {
+        console.debug('navToggle (inline) clicked');
+        const isOpen = header.classList.toggle('is-open');
+        document.body.classList.toggle('nav-open', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        console.debug('site-header state (inline):', isOpen);
+      });
+
+      siteNav.addEventListener('click', (event) => {
+        if (event.target.closest('a')) {
+          header.classList.remove('is-open');
+          document.body.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Open navigation');
+        }
+      });
+    } catch (e) { /* ignore */ }
+  })();
+</script>
