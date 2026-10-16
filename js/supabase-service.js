@@ -374,13 +374,13 @@
     });
     if (error) throw error;
     form.reset();
-    setStatus(form, "Thank you. Your message has been sent.", "success");
+    setStatus(form, "Your message is in the admin inbox. Send its WhatsApp copy below.", "success");
 
-    // Attempt to open user's mail client and WhatsApp to send a copy to admin.
-    try {
-      const adminEmail = 'info@kofiaseadventist.org';
-      const adminPhone = '233540460532';
-      const subject = encodeURIComponent(data.topic || 'Website message');
+    // A link is reliable after an async database save, unlike window.open(),
+    // which browsers commonly block as a popup at this point.
+    const share = document.getElementById("contact-share");
+    if (share) {
+      /* Legacy popup implementation retained below for context.
       const bodyLines = [];
       if (data.name) bodyLines.push(`From: ${data.name}`);
       if (data.email) bodyLines.push(`Email: ${data.email}`);
@@ -398,6 +398,28 @@
     } catch (e) {
       // ignore errors — sharing links are optional
       console.warn('Could not open share links', e);
+      */
+      const bodyLines = [];
+      if (data.name) bodyLines.push(`From: ${data.name}`);
+      if (data.email) bodyLines.push(`Email: ${data.email}`);
+      if (data.phone) bodyLines.push(`Phone: ${data.phone}`);
+      if (data.topic) bodyLines.push(`Topic: ${data.topic}`);
+      if (data.message) bodyLines.push(`Message:\n${data.message}`);
+
+      const container = document.createElement("div");
+      container.className = "resources-cta";
+      const prompt = document.createElement("p");
+      prompt.textContent = "Your message has also been saved for the office.";
+      const whatsapp = document.createElement("a");
+      whatsapp.className = "btn btn--ghost";
+      whatsapp.href = `https://wa.me/233540460532?text=${encodeURIComponent(bodyLines.join("\n\n"))}`;
+      whatsapp.target = "_blank";
+      whatsapp.rel = "noopener noreferrer";
+      whatsapp.textContent = "Send copy via WhatsApp";
+      container.append(prompt, whatsapp);
+      share.replaceChildren(container);
+      share.style.display = "block";
+      share.setAttribute("aria-hidden", "false");
     }
   }
 
