@@ -34,33 +34,6 @@ if (location.protocol === 'file:') {
 }
 </script>
 
-<!-- Inline nav initializer: ensures mobile toggle works even if site JS isn't loaded -->
-<script>
-  (function(){
-    try {
-      const header = document.querySelector('.site-header');
-      const navToggle = header && header.querySelector('[data-nav-toggle]');
-      const siteNav = document.querySelector('[data-site-nav]') || document.querySelector('.site-nav');
-      if (!header || !navToggle || !siteNav) return;
-
-      navToggle.addEventListener('click', () => {
-        const isOpen = header.classList.toggle('is-open');
-        document.body.classList.toggle('nav-open', isOpen);
-        navToggle.setAttribute('aria-expanded', String(isOpen));
-        navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-      });
-
-      siteNav.addEventListener('click', (event) => {
-        if (event.target.closest('a')) {
-          header.classList.remove('is-open');
-          document.body.classList.remove('nav-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.setAttribute('aria-label', 'Open navigation');
-        }
-      });
-    } catch (e) { /* ignore */ }
-  })();
-</script>
     <a class="watch-link" href="live.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.75a6 6 0 0 0 0 6.5M17.5 8.75a6 6 0 0 1 0 6.5M9.5 10.5a2.9 2.9 0 0 0 0 3M14.5 10.5a2.9 2.9 0 0 1 0 3M12 12h.01"/></svg>Watch Live</a>
   </header>
 
